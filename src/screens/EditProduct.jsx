@@ -9,7 +9,7 @@ const EditProduct = () => {
 
   const navigate = useNavigate()
   const {id} = useParams()
-  const [title, setTitle] = useState()
+  const [title, setTitle] = useState('')
   const [price, setPrice] = useState(0)
   const [description, setDescription] = useState('')
 
@@ -26,7 +26,9 @@ const EditProduct = () => {
 
   }, [id])
  
-  const updateHandler =  async () => {
+  const updateHandler =  async (e) => {
+
+    e.preventDefault();   
 
     const data = {
       title: title,
@@ -39,6 +41,8 @@ const EditProduct = () => {
     navigate('/products')
 
   }
+
+  
 
   return (
     <>
