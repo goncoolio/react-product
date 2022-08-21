@@ -22,7 +22,7 @@ const ProductDetail = () => {
       }
 
       getSignleProductData()
-  }, [])
+  }, [id])
   return (
     <>
         <h1>ProductDetail</h1>

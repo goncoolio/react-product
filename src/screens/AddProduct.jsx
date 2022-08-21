@@ -10,10 +10,8 @@ const AddProduct = () => {
   const [description, setDescription] = useState("");
 
   const addProductHandler = async (e) => {
-
     
-    e.preventDefault();
-    
+    e.preventDefault();   
     
     const data = {
         title: title,
@@ -23,7 +21,7 @@ const AddProduct = () => {
     }
 
     await axios.post('/api/v1/products/addProduct', data)
-    
+
     navigate('/products')
   }
 
