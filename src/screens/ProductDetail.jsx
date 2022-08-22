@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { Card, Button } from 'react-bootstrap'
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const ProductDetail = () => {
 
   const { id } = useParams()
+  const navigate = useNavigate()
 
   const [title, setTitle] = useState('')
   const [price, setPrice] = useState(0)
@@ -23,6 +24,15 @@ const ProductDetail = () => {
 
       getSignleProductData()
   }, [id])
+
+  const deleteHandler = async () => {
+
+    await axios.delete(`/api/v1/products/delete/${id}`)
+    
+    navigate('/products')
+  }
+
+
   return (
     <>
         <h1>ProductDetail</h1>
@@ -37,10 +47,9 @@ const ProductDetail = () => {
               </Card.Text>
               <Link to={`/product/edit/${id}`}>
                   <Button variant='primary'>Edit</Button>
-              </Link>
-              <Link to={`/product/${id}`}>
-                  <Button variant='danger'>Delete</Button>
-              </Link>
+              </Link>              
+              <Button variant='danger' onClick={deleteHandler}>Delete</Button>
+              
               
             </Card.Body>
         </Card>

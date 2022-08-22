@@ -23,13 +23,16 @@ const ShowProducts = () => {
         <h1 className='text-center'>Show All Products</h1>
         <hr/>
         <Row>
-          {
-            products.map(product => {
-              return <Col md={8} lg={12} sm={12} key={product.id}>
-                <ProductCard product={product} />
-              </Col>              
-            })
-          }
+          <Col md={12} >
+            {
+              products.map(product => {
+                return <Col md={8} lg={12} sm={12} key={product.id}>
+                  <ProductCard product={product} />
+                </Col>              
+              })
+            }
+          </Col>
+          
         </Row>
         
       </Container>
