@@ -24,13 +24,14 @@ const ShowProducts = () => {
         <hr/>
         <Row>
           <Col md={12} >
-            {
-              products.map(product => {
-                return <Col md={8} lg={12} sm={12} key={product.id}>
+            { Array.isArray(products)
+
+             ? products.map((product, index) => {
+                return <Col md={8} lg={12} sm={12} key={index}>
                   <ProductCard product={product} />
                 </Col>              
               })
-            }
+            : null}
           </Col>
           
         </Row>

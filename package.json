@@ -1,8 +1,8 @@
 {
   "name": "client",
-  
+  "homepage": "http://dev.taligne.com",
   "version": "0.1.0",
-  "proxy": "http://localhost:5500",
+  "proxy": "https://api.taligne.com",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
