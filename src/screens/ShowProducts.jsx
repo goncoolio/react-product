@@ -9,7 +9,7 @@ const ShowProducts = () => {
 
   useEffect(() => {
     const getProductsData = async () => {
-      const { data } = await axios.get('/api/v1/products/products')
+      const { data } = await axios.get('/products')
       console.log(data)
       setProducts(data)
     }

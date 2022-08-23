@@ -15,7 +15,7 @@ const EditProduct = () => {
 
   useEffect(() => {
       const getDataById = async () => {
-        const {data}  = await axios.get(`/api/v1/products/${id}`)
+        const {data}  = await axios.get(`/${id}`)
         console.log(data)
 
         setTitle(data.title)
@@ -36,7 +36,7 @@ const EditProduct = () => {
       description: description,
       published: true
     }
-    await axios.put(`/api/v1/products/${id}`, data)
+    await axios.put(`/${id}`, data)
 
     navigate('/products')
 

@@ -14,7 +14,7 @@ const ProductDetail = () => {
 
   useEffect(() => {
       const getSignleProductData = async () => {
-        const { data } = await axios.get(`/api/v1/products/${id}`)
+        const { data } = await axios.get(`/${id}`)
         console.log(data)
 
         setTitle(data.title)
@@ -27,7 +27,7 @@ const ProductDetail = () => {
 
   const deleteHandler = async () => {
 
-    await axios.delete(`/api/v1/products/delete/${id}`)
+    await axios.delete(`/delete/${id}`)
     
     navigate('/products')
   }

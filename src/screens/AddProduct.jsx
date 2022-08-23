@@ -20,7 +20,7 @@ const AddProduct = () => {
         published: true
     }
 
-    await axios.post('/api/v1/products/addProduct', data)
+    await axios.post('/addProduct', data)
 
     navigate('/products')
   }
